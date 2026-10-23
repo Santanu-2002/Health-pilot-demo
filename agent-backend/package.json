@@ -1,0 +1,22 @@
+{
+  "name": "healthpilot-ai-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "check": "node --check server.js && node --check src/controllers/authController.js && node --check src/controllers/appointmentController.js && node --check src/controllers/aiController.js",
+    "seed:demo": "node scripts/seedDemoDoctors.js",
+    "import:doctors": "node scripts/importDoctors.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.24.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.10.1"
+  }
+}
