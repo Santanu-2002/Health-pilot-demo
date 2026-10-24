@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+agent-backend/node_modules/
+
+# Secrets
+.env
+.env.*
+!.env.example
+agent-backend/.env
+agent-backend/.env.*
+
+# Build files
+dist/
+build/
+
+# Logs
+*.log
