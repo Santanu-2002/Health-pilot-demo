@@ -12,7 +12,15 @@ import { rateLimit } from './src/middleware/rateLimit.js';
 
 const app = express();
 const PORT = Number(process.env.PORT || 5000);
-const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173').split(',').map((v) => v.trim());
+// const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173').split(',').map((v) => v.trim());
+const allowedOrigins = [
+  'https://health-pilot-demo-web-app.vercel.app',
+  'http://localhost:5173',
+  ...(process.env.CLIENT_URL || '')
+    .split(',')
+    .map((v) => v.trim())
+    .filter(Boolean),
+];
 app.disable('x-powered-by');
 if (process.env.NODE_ENV === 'production') app.set('trust proxy', 1);
 app.use(cors({ origin(origin, callback) { if (!origin || allowedOrigins.includes(origin)) return callback(null, true); return callback(new Error('Origin is not allowed by CORS.')); }, credentials: true }));
