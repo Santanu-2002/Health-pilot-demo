@@ -91,7 +91,7 @@ MONGODB_URI=<connection string>
 JWT_SECRET=<random string, 32+ characters>
 JWT_EXPIRES_IN=1d
 GEMINI_API_KEY=<optional>
-GEMINI_MODEL=gemini-2.5-flash
+GEMINI_MODEL=gemini-3.8-flash
 ```
 ```bash
 npm run seed:demo
