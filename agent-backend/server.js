@@ -15,6 +15,7 @@ const PORT = Number(process.env.PORT || 5000);
 // const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173').split(',').map((v) => v.trim());
 const allowedOrigins = [
   'https://health-pilot-demo-web-app-git-main-santanu-2002s-projects.vercel.app',
+  'https://health-pilot-demo-web-app.vercel.app',
   'http://localhost:5173',
   ...(process.env.CLIENT_URL || '')
     .split(',')
